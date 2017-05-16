@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  api:
+    image: api
+    ports:
+      - "80:80"
+    links:
+      - rabbitmq
+    build:
+      context: ./Api
+      dockerfile: Dockerfile

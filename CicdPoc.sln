@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F14303B2-F419-4670-AD61-F1B48EE20747}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-conf", "docker-conf", "{759945AE-32C1-41C2-BA59-4B010AF7CE86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logstash", "logstash", "{561758E5-6ED7-43CB-89E3-1EFC1A6A31D2}"
+	ProjectSection(SolutionItems) = preProject
+		logstash.conf = logstash.conf
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{561758E5-6ED7-43CB-89E3-1EFC1A6A31D2} = {759945AE-32C1-41C2-BA59-4B010AF7CE86}
+	EndGlobalSection
+EndGlobal
