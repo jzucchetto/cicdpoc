@@ -10,6 +10,8 @@ services:
     build:
       context: ./Api
       dockerfile: Dockerfile
+    environment:
+      - VIRTUAL_HOST=dev.api.cicdpocagents.westus.cloudapp.azure.com/
 
 
   rabbitmq:
