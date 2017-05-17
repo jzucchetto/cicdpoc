@@ -1,14 +1,6 @@
 version: '2'
 
 services:
-  nginx-proxy:
-    image: jwilder/nginx-proxy
-    container_name: nginx-proxy
-    ports:
-      - "80:80"
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-
   api:
     image: api
     ports:
@@ -18,9 +10,6 @@ services:
     build:
       context: ./Api
       dockerfile: Dockerfile
-    environment:
-      - VIRTUAL_HOST=dev.api.cicdpocagents.westus.cloudapp.azure.com/
-
 
   rabbitmq:
     image: rabbitmq:3-management
