@@ -30,24 +30,10 @@ namespace Api.Controllers
             if (Engine.IsReady)
             {
                 Console.Out.WriteLine("Health check returned OK");
-                return Ok("OK");
-            }
-
-            Console.Out.WriteLine("Health check returned Not Found");
-            return NotFound();
-        }
-
-        [HttpGet]
-        [Route("ready")]
-        public IActionResult ReadyCheck()
-        {
-            if (Engine.IsReady)
-            {
-                Console.Out.WriteLine("Ready check returned OK");
                 return Ok();
             }
 
-            Console.Out.WriteLine("Ready check returned Not Found");
+            Console.Out.WriteLine("Health check returned Not Found");
             return NotFound();
         }
     }
