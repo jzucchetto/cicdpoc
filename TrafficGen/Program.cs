@@ -38,7 +38,7 @@ namespace TrafficGenerator
                     Console.Out.WriteLine($"Reveived {response.StatusCode} response");
                 });
 
-                Thread.Sleep(3000);
+                Thread.Sleep(300);
             }
         }
 
