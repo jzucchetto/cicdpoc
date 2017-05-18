@@ -14,7 +14,7 @@ services:
   trafficgenerator:
     image: trafficgenerator
     build:
-      context: ./../TrafficGenerator
+      context: ./TrafficGenerator
       dockerfile: Dockerfile
     links:
       - api

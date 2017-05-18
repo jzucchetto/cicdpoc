@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logstash", "logstash", "{56
 		logstash.conf = logstash.conf
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficGenerator", "..\TrafficGenerator\TrafficGenerator.csproj", "{06B7407E-4DE5-4874-815C-CFA2649E8DC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrafficGenerator", "TrafficGenerator\TrafficGenerator.csproj", "{1237B1E9-B3ED-4753-A464-1040DC67D2AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,10 +30,10 @@ Global
 		{F14303B2-F419-4670-AD61-F1B48EE20747}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F14303B2-F419-4670-AD61-F1B48EE20747}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F14303B2-F419-4670-AD61-F1B48EE20747}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06B7407E-4DE5-4874-815C-CFA2649E8DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06B7407E-4DE5-4874-815C-CFA2649E8DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06B7407E-4DE5-4874-815C-CFA2649E8DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06B7407E-4DE5-4874-815C-CFA2649E8DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1237B1E9-B3ED-4753-A464-1040DC67D2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1237B1E9-B3ED-4753-A464-1040DC67D2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1237B1E9-B3ED-4753-A464-1040DC67D2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1237B1E9-B3ED-4753-A464-1040DC67D2AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
