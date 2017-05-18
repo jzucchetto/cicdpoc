@@ -43,7 +43,7 @@ namespace TrafficGenerator
                 if (interval != null)
                     i = Convert.ToInt32(interval);
 
-                Thread.Sleep(rnd.Next(100, 100 + i));
+                Thread.Sleep(rnd.Next(1000, 1000 + i));
 
 
             }

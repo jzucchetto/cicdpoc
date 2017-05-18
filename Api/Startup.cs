@@ -5,10 +5,16 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Polly;
 using RawRabbit.Extensions.Client;
 
 namespace Api
 {
+    public static class Engine
+    {
+        public static bool IsReady { get; set; }
+    }
+
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -29,17 +35,29 @@ namespace Api
             // Add framework services.
             services.AddMvc();
 
-            services.AddRawRabbit(Configuration.GetSection("RabbitMQ"));
+
+            var rabbitMqHostname = Configuration.GetSection("RabbitMQ").GetSection("Hostnames").GetChildren().ToList().First().Value;
+            Console.Out.WriteLine($"RabbitMQ hostname: {rabbitMqHostname}");
+
+            Policy.Handle<Exception>()
+                .WaitAndRetryForever(i =>
+                {
+                    Console.Out.WriteLine($"Trying to connect to RabbitMQ on {rabbitMqHostname}. Retry count: {i}");
+                    return TimeSpan.FromSeconds(5);
+                })
+                .Execute(() =>
+                {
+                    services.AddRawRabbit(Configuration.GetSection("RabbitMQ"));
+                    Engine.IsReady = true;
+                });
+
 
             services.Configure<SystemInfo>(info =>
             {
                 info.Hostname = Configuration.GetValue<string>("HOSTNAME");
             });
 
-            services.AddApplicationInsightsTelemetry("39b6ceee-6847-403f-b8c5-6ffcf5d8fc3d");
-
-            var rabbitMqHostname = Configuration.GetSection("RabbitMQ").GetSection("Hostnames").GetChildren().ToList().First().Value;
-            Console.Out.WriteLine($"RabbitMQ hostname: {rabbitMqHostname}");
+            //services.AddApplicationInsightsTelemetry("39b6ceee-6847-403f-b8c5-6ffcf5d8fc3d");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

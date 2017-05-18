@@ -21,10 +21,20 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        [Route("/health")]
+        [Route("health")]
         public string HealthCheck()
         {
             return "OK";
+        }
+
+        [HttpGet]
+        [Route("ready")]
+        public IActionResult ReadyCheck()
+        {
+            if (Engine.IsReady)
+                return Ok();
+
+            return NotFound();
         }
     }
 }
