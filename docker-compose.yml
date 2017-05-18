@@ -10,8 +10,9 @@ services:
     build:
       context: ./Api
       dockerfile: Dockerfile
-    args:
-      buildno: 1
+    labels:
+      "HAPROXY_GROUP": "external"
+      "HAPROXY_0_VHOST": "dev.api.fmc.com"
 
   rabbitmq:
     image: rabbitmq:3-management
