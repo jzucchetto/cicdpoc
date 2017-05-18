@@ -11,13 +11,12 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
 
-  trafficgenerator:
-    image: trafficgenerator
+  trafficgen:
+    image: trafficgen
     build:
-      context: ./TrafficGenerator
+      context: ./TrafficGen
       dockerfile: Dockerfile
     links:
       - api
     environment:
-      - ENVIRONMENT=debug
       - API_URL=http://api/events
