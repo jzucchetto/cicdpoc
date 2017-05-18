@@ -10,3 +10,13 @@ services:
       dockerfile: Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+
+  trafficgenerator:
+    image: trafficgenerator
+    build:
+      context: ./../TrafficGenerator
+      dockerfile: Dockerfile
+    links:
+      - api
+    environment:
+      - ENVIRONMENT=debug
