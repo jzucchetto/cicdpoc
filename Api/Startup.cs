@@ -59,7 +59,7 @@ namespace Api
 
 
             var applicationInsightId = Configuration.GetValue<string>("InstrumentationKey");
-            if (string.IsNullOrEmpty(applicationInsightId))
+            if (!string.IsNullOrEmpty(applicationInsightId))
             {
                 Console.Out.WriteLine($"Loading Application Insights Telemetry on {applicationInsightId}");
                 services.AddApplicationInsightsTelemetry(applicationInsightId);
