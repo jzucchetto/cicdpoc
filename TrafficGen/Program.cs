@@ -21,10 +21,11 @@ namespace TrafficGenerator
 
 
             var client = new RestClient(url);
+            var rnd = new Random();
 
             while (true)
             {
-                var @event = GenerateEvent();
+                var @event = GenerateEvent(rnd);
                 var request = new RestRequest(Method.POST)
                     .AddUrlSegment("eventType", @event.EventType)
                     .AddJsonBody(@event.Payload);
@@ -41,17 +42,17 @@ namespace TrafficGenerator
             }
         }
 
-        private static Event GenerateEvent()
+        private static Event GenerateEvent(Random rnd)
         {
             return new Event
             {
-                EventType = _eventTypes[new Random().Next(_eventTypes.Length)],
+                EventType = _eventTypes[rnd.Next(_eventTypes.Length)],
                 Payload = new
                 {
-                    Browser = _browsers[new Random().Next(_browsers.Length)],
-                    BrowserVersion = _broserVersions[new Random().Next(_broserVersions.Length)],
-                    Os = _os[new Random().Next(_os.Length)],
-                    User = _users[new Random().Next(_users.Length)]
+                    Browser = _browsers[rnd.Next(_browsers.Length)],
+                    BrowserVersion = _broserVersions[rnd.Next(_broserVersions.Length)],
+                    Os = _os[rnd.Next(_os.Length)],
+                    User = _users[rnd.Next(_users.Length)]
                 }
             };
         }
