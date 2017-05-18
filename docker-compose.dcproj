@@ -1,5 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|AnyCPU">
+      <Configuration>Dev</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Production|AnyCPU">
+      <Configuration>Production</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|AnyCPU">
+      <Configuration>Test</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>f14303b2-f419-4670-ad61-f1b48ee20747</ProjectGuid>
     <DockerLaunchBrowser>false</DockerLaunchBrowser>
@@ -7,6 +29,8 @@
     <DockerServiceName>api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="docker-compose.env.production.yml" />
+    <None Include="docker-compose.env.test.yml" />
     <None Include="docker-compose.ci.build.yml" />
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>

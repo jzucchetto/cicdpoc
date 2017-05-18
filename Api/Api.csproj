@@ -6,6 +6,12 @@
     <UserSecretsId>757521c9-0d29-4574-afac-a08e66af9e4f</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|AnyCPU'" />
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|AnyCPU'" />
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Production|AnyCPU'" />
+
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>

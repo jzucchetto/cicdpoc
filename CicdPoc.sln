@@ -17,17 +17,27 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Dev|Any CPU = Dev|Any CPU
+		Production|Any CPU = Production|Any CPU
+		Test|Any CPU = Test|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Dev|Any CPU.ActiveCfg = Dev|Any CPU
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Dev|Any CPU.Build.0 = Dev|Any CPU
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Production|Any CPU.Build.0 = Production|Any CPU
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{C0E81D52-133E-4E9B-A7B8-E2D2B70B40FD}.Test|Any CPU.Build.0 = Test|Any CPU
 		{F14303B2-F419-4670-AD61-F1B48EE20747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F14303B2-F419-4670-AD61-F1B48EE20747}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F14303B2-F419-4670-AD61-F1B48EE20747}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F14303B2-F419-4670-AD61-F1B48EE20747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Dev|Any CPU.ActiveCfg = Dev|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Dev|Any CPU.Build.0 = Dev|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Production|Any CPU.Build.0 = Production|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{F14303B2-F419-4670-AD61-F1B48EE20747}.Test|Any CPU.Build.0 = Test|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
