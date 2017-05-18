@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <UserSecretsId>757521c9-0d29-4574-afac-a08e66af9e4f</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/9d291677-95eb-4832-b337-1bd013ebb0bf/resourcegroups/cicdpoc-rg/providers/microsoft.insights/components/cicdpoc-dev</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/9d291677-95eb-4832-b337-1bd013ebb0bf/resourcegroups/cicdpoc-rg/providers/microsoft.insights/components/cicdpoc-dev</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|AnyCPU'" />
@@ -26,6 +28,9 @@
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>

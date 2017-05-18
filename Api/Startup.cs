@@ -57,13 +57,7 @@ namespace Api
                 info.Hostname = Configuration.GetValue<string>("HOSTNAME");
             });
 
-
-            var applicationInsightId = Configuration.GetValue<string>("InstrumentationKey");
-            if (!string.IsNullOrEmpty(applicationInsightId))
-            {
-                Console.Out.WriteLine($"Loading Application Insights Telemetry on {applicationInsightId}");
-                services.AddApplicationInsightsTelemetry(applicationInsightId);
-            }
+            services.AddApplicationInsightsTelemetry();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
