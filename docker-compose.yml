@@ -20,3 +20,4 @@ services:
       - api
     environment:
       - ENVIRONMENT=debug
+      - API_URL=http://api/events/

@@ -15,21 +15,12 @@ namespace TrafficGenerator
         static void Main(string[] args)
         {
             var env = Environment.GetEnvironmentVariable("ENVIRONMENT");
-            string url;
-
-            if (env == "dev")
-                url = "http://dev.api.fmc.com/events/{eventType}";
-            else if (env == "test")
-                url = "http://test.api.fmc.com/events/{eventType}";
-            else if (env == "prod")
-                url = "http://api.fmc.com/events/{eventType}";
-            else
-                url = "http://api/events/{eventType}";
+            var url = Environment.GetEnvironmentVariable("API_URL");
 
             Console.Out.WriteLine($"Traffic Generator started for {url}");
 
 
-            var client = new RestClient(url);
+            var client = new RestClient(url + "/{eventType}");
 
             while (true)
             {
