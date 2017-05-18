@@ -38,7 +38,12 @@ namespace TrafficGenerator
                     Console.Out.WriteLine($"Reveived {response.StatusCode} response");
                 });
 
-                Thread.Sleep(300);
+                var interval = Environment.GetEnvironmentVariable("INTERVAL");
+                var i = 300;
+                if (interval != null)
+                    i = Convert.ToInt32(interval);
+
+                Thread.Sleep(i);
             }
         }
 
