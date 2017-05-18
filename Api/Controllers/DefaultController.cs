@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
 namespace Api.Controllers
@@ -22,9 +23,9 @@ namespace Api.Controllers
 
         [HttpGet]
         [Route("health")]
-        public string HealthCheck()
+        public IActionResult HealthCheck()
         {
-            return "OK";
+            return Ok("OK");
         }
 
         [HttpGet]
