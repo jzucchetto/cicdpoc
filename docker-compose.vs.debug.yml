@@ -6,6 +6,8 @@ services:
     build:
       args:
         source: ${DOCKER_BUILD_SOURCE}
+    links:
+      - rabbitmq
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
     volumes:
