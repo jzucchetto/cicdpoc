@@ -19,5 +19,12 @@ namespace Api.Controllers
         {
             return $"Application {Assembly.GetEntryAssembly().GetName().Name} running on {_systemInfo.Hostname}";
         }
+
+        [HttpGet]
+        [Route("/health")]
+        public string HealthCheck()
+        {
+            return "OK";
+        }
     }
 }
