@@ -1,5 +1,6 @@
 ﻿using Api.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RawRabbit;
 using RawRabbit.Configuration.Exchange;
@@ -24,8 +25,9 @@ namespace Api.Controllers
             var @event = new EventModel
             {
                 EventType = eventType,
-                JsonPayload = jsonPayload.ToString()
+                Payload = JsonConvert.DeserializeObject<dynamic>(jsonPayload.ToString())
             };
+            
 
             // send event to RabbitMQ
             _client.PublishAsync(@event, configuration: cfg =>

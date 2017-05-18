@@ -4,6 +4,6 @@
     {
         public string EventType { get; set; }
 
-        public string JsonPayload { get; set; }
+        public dynamic Payload { get; set; }
     }
 }
