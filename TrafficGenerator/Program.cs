@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Http;
 using System.Threading;
 using RestSharp;
 
@@ -25,7 +24,10 @@ namespace TrafficGenerator
             else if (env == "prod")
                 url = "http://api.fmc.com/events/{eventType}";
             else
-                url = "http://api/events/{eventType}";               
+                url = "http://api/events/{eventType}";
+
+            Console.Out.WriteLine($"Traffic Generator started for {url}");
+
 
             var client = new RestClient(url);
 
@@ -39,7 +41,7 @@ namespace TrafficGenerator
 
                 client.PostAsync(request, (response, handle) =>
                 {
-                    
+                    Console.Out.WriteLine($"Posted {@event.EventType} and got {response.StatusCode} response");
                 });
 
                 Thread.Sleep(3000);
