@@ -10,8 +10,5 @@ services:
     build:
       context: ./Api
       dockerfile: Dockerfile
-    labels:
-      "HAPROXY_GROUP": "external"
-      "HAPROXY_0_VHOST": "dev.api.fmc.com"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
