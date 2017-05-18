@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -25,7 +26,15 @@ namespace Api.Controllers
         [Route("health")]
         public IActionResult HealthCheck()
         {
-            return Ok("OK");
+
+            if (Engine.IsReady)
+            {
+                Console.Out.WriteLine("Health check returned OK");
+                return Ok("OK");
+            }
+
+            Console.Out.WriteLine("Health check returned Not Found");
+            return NotFound();
         }
 
         [HttpGet]
@@ -33,8 +42,12 @@ namespace Api.Controllers
         public IActionResult ReadyCheck()
         {
             if (Engine.IsReady)
+            {
+                Console.Out.WriteLine("Ready check returned OK");
                 return Ok();
+            }
 
+            Console.Out.WriteLine("Ready check returned Not Found");
             return NotFound();
         }
     }
