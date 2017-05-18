@@ -18,5 +18,3 @@ services:
       dockerfile: Dockerfile
     links:
       - api
-    environment:
-      - API_URL=http://api/events

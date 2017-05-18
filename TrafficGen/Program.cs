@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using Newtonsoft.Json;
 using RestSharp;
 
 namespace TrafficGenerator
@@ -14,13 +15,12 @@ namespace TrafficGenerator
 
         static void Main(string[] args)
         {
-            var env = Environment.GetEnvironmentVariable("ENVIRONMENT");
-            var url = Environment.GetEnvironmentVariable("API_URL");
+            var url = "http://api/{eventType}";
 
             Console.Out.WriteLine($"Traffic Generator started for {url}");
 
 
-            var client = new RestClient(url + "/{eventType}");
+            var client = new RestClient(url);
 
             while (true)
             {
@@ -30,9 +30,11 @@ namespace TrafficGenerator
                     .AddJsonBody(@event.Payload);
                 request.RequestFormat = DataFormat.Json;
 
+                Console.Out.WriteLine($"Posting to {url} with payload {JsonConvert.SerializeObject(@event.Payload)}");
+
                 client.PostAsync(request, (response, handle) =>
                 {
-                    Console.Out.WriteLine($"Posted {@event.EventType} and got {response.StatusCode} response");
+                    Console.Out.WriteLine($"Reveived {response.StatusCode} response");
                 });
 
                 Thread.Sleep(3000);
