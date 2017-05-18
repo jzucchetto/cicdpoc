@@ -15,7 +15,7 @@ namespace TrafficGenerator
 
         static void Main(string[] args)
         {
-            var url = "http://api/{eventType}";
+            var url = "http://api/events/{eventType}";
 
             Console.Out.WriteLine($"Traffic Generator started for {url}");
 
