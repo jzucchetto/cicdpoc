@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,6 +37,9 @@ namespace Api
             });
 
             services.AddApplicationInsightsTelemetry("39b6ceee-6847-403f-b8c5-6ffcf5d8fc3d");
+
+            var rabbitMqHostname = Configuration.GetSection("RabbitMQ").GetSection("Hostnames").GetChildren().ToList().First().Value;
+            Console.Out.WriteLine($"RabbitMQ hostname: {rabbitMqHostname}");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
