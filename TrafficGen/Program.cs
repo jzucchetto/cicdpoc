@@ -23,6 +23,17 @@ namespace TrafficGenerator
             var client = new RestClient(url);
             var rnd = new Random();
 
+
+            var intervalMin = Environment.GetEnvironmentVariable("INTERVAL_MIN");
+            var intervalMax = Environment.GetEnvironmentVariable("INTERVAL_MAX");
+            var iMin = 1000;
+            var iMax = 5000;
+            if (intervalMin != null)
+                iMin = Convert.ToInt32(intervalMin);
+
+            if (intervalMax != null)
+                iMax = Convert.ToInt32(intervalMax);
+
             while (true)
             {
                 var @event = GenerateEvent(rnd);
@@ -38,14 +49,8 @@ namespace TrafficGenerator
                     Console.Out.WriteLine($"Reveived {response.StatusCode} response");
                 });
 
-                var interval = Environment.GetEnvironmentVariable("INTERVAL");
-                var i = 300;
-                if (interval != null)
-                    i = Convert.ToInt32(interval);
 
-                Thread.Sleep(rnd.Next(1000, 1000 + i));
-
-
+                Thread.Sleep(rnd.Next(iMin, iMax > iMin ? iMax : iMin));
             }
         }
 
