@@ -14,6 +14,7 @@ namespace Api.Controllers
         public DefaultController(IOptions<SystemInfo> systemInfo)
         {
             _systemInfo = systemInfo.Value;
+
         }
 
         [HttpGet]
